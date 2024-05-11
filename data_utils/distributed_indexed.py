@@ -138,6 +138,7 @@ class DistributedMMapIndexedDataset(torch.utils.data.Dataset):
         for state in range(np.iinfo(np.int32).max):
             source_file = path + name + f"_{state}"
             if self.exists(source_file):
+                # print(source_file)
                 index = self.Index(index_file_path(source_file))
                 history[state] = (history[state-1][1], history[state-1][1] + len(index))
             else:

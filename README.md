@@ -13,9 +13,10 @@ Our code is based in [this commit](https://github.com/huggingface/transformers/c
 The finetune dataset "databricks-dolly-15k" can be download from the HugginFace datasaets [repository](https://huggingface.co/datasets/databricks/databricks-dolly-15k). The dowloaded file show change name to raw.jsonl and store it in 'data/dolly/'.
 
 ### 2.2 Data Processing
-Tokenize the data and store them in binary files:
+Tokenize the data and store them in binary files. Defualt valid size=1000, the rest is train data:
 ```bash
-bash scripts/tools/process_data_dolly.sh /PATH/TO/Project # Process Dolly Train / Validation Data
+# Process Dolly Train / Validation Data
+bash scripts/tools/process_data_dolly.sh /PATH/TO/Project
 ```
 
 ## 3. Model

@@ -2,3 +2,4 @@ checkpoints/
 data/dolly/
 __pycache__/
 processed_data/
+results/
