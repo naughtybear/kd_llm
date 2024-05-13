@@ -18,7 +18,7 @@ CKPT_NAME=${4-"gpt2-base"}
 CKPT="${BASE_PATH}/results/gpt2/train/${CKPT_NAME}/"
 # data
 DATA_NAMES="dolly"
-DATA_DIR="${BASE_PATH}/data/dolly"
+DATA_DIR="${BASE_PATH}/processed_data/dolly/full/gpt2/"
 # hp
 EVAL_BATCH_SIZE=16
 # runtime

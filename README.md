@@ -17,6 +17,8 @@ Tokenize the data and store them in binary files. Defualt valid size=1000, the r
 ```bash
 # Process Dolly Train / Validation Data
 bash scripts/tools/process_data_dolly.sh /PATH/TO/Project
+# Process Dolly+Rationale Train / Validation Data
+bash scripts/tools/process_data_rational.sh /PATH/TO/Project
 ```
 
 ## 3. Model
@@ -28,17 +30,26 @@ To run fine-tuning or standard KD baselines, you need to download the model chec
 Training the baseline model that compare to the white box KD and our method.
 #### Fine-tune the teacher models
 ```bash
+# train with dolly
 bash scripts/sft/sft_xlarge.sh /PATH/TO/Project
+# train with rationale
+bash scripts/sft/sft_xlarge_rationale.sh /PATH/TO/Project
 ```
 
 #### SFT(Supervise fine-tuning) Baselines
 ```bash
+# train with dolly
 bash scripts/gpt2/sft/sft_base.sh /PATH/TO/Project
+# train with rationale
+bash scripts/gpt2/sft/sft_base_rationale.sh /PATH/TO/Project
 ```
 
 #### KD Baselines
 ```bash
+# train with dolly
 bash scripts/kd/kd_base.sh /PATH/TO/Project
+# train with rationale
+bash scripts/kd/kd_base_rationale.sh /PATH/TO/Project
 ```
 
 ### 4.2 MiniLLM
@@ -52,10 +63,16 @@ bash scripts/sft/sft_base.sh /PATH/TO/Project
 #### Train
 The final checkpoints are selected by the Rouge-L scores.
 ```bash
+# train with dolly
 bash scripts/minillm/train_base_xl.sh /PATH/TO/Project
+# train with rationale
+bash scripts/minillm/train_base_xl_rationale.sh /PATH/TO/Project
 ```
 
 ## 5. Run Evaluation
 ```bash
+# evaluate the result without rationale
 bash scripts/eval/run_eval.sh /PATH/TO/Project
+# evaluate the result with rationale
+bash scripts/eval/run_eval_rationale.sh /PATH/TO/Project
 ```

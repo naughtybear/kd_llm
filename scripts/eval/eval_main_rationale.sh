@@ -17,8 +17,8 @@ BASE_PATH=${1-"/home/MiniLLM"}
 CKPT_NAME=${4-"gpt2-base"}
 CKPT="${BASE_PATH}/results/rationale/train/${CKPT_NAME}/"
 # data
-DATA_NAMES="dolly"
-DATA_DIR="${BASE_PATH}/processed_data/dolly/full/gpt2/"
+DATA_NAMES="rationale"
+DATA_DIR="${BASE_PATH}/processed_data/rationale/full/gpt2/"
 # hp
 EVAL_BATCH_SIZE=16
 # runtime
